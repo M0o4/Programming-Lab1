@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.Lab1.iml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Codes\Programming\Programming-Lab1\Lab1\Lab1\.idea\.idea.Lab1.dir\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
