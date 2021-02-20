@@ -11,11 +11,12 @@
         }
         
         #endregion
+        
 
         #region Private Variables
         
-        private string _name;
-        private Question[] _questions;
+        protected string _name;
+        protected Question[] _questions;
         
         #endregion
     }
