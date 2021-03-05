@@ -48,7 +48,7 @@ namespace TestLibrary
 
         public virtual void AddQuestion()
         {
-            int a = 0;
+            string exit;
             
             do
             {
@@ -57,13 +57,13 @@ namespace TestLibrary
                 
                 _questions.Add(new TestQuestion(text));
                 
-                Console.WriteLine("Добавить еще вопрос? \n0)да 1)нет");
+                Console.WriteLine("Добавить еще вопрос? \nY)да N)нет");
                 
                 Console.Write("Ввод: ");
 
-                a = Convert.ToInt32(Console.ReadLine());
+                exit = Console.ReadLine();
 
-            } while (a == 0);
+            } while (exit != null && exit.ToLower() == "y");
             
         }
         
@@ -89,7 +89,7 @@ namespace TestLibrary
                 } while (id < 1);
                 
 
-                Console.WriteLine(item.Answer.ToLower() == item.GetAnswerInList(id-1).ToLower() ? "Правильно!" : "Неравиольно!!");
+                Console.WriteLine(string.Equals(item.Answer.ToLower(), item.GetAnswerInList(id-1).ToLower(), StringComparison.CurrentCultureIgnoreCase) ? "Правильно!" : "Неравиольно!!");
             }
         }
         

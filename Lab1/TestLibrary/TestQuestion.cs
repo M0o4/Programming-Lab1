@@ -9,9 +9,9 @@ namespace TestLibrary
 
         #region Private Variables
 
-        private List<string> _answers;
+        private readonly List<string> _answers;
         
-        private Random rng = new Random();  
+        private readonly Random _rng = new Random();  
 
         #endregion
 
@@ -34,15 +34,15 @@ namespace TestLibrary
             Console.Write("Ввод: ");
             var answer = Console.ReadLine();
             Answer = answer;
+            _answers.Add(answer);
             
             do
             {
-                _answers.Add(answer);
-                
                 Console.WriteLine("Введите неправльные ответы: ");
                 Console.Write("Ввод: ");
 
                 answer = Console.ReadLine();
+                _answers.Add(answer);
                 
                 Console.WriteLine("Хотите добавить еще ответов?\nY)Да\nN)Нет");
                 Console.Write("Ввод: ");
@@ -57,7 +57,7 @@ namespace TestLibrary
             int n = list.Count;  
             while (n > 1) {  
                 n--;  
-                int k = rng.Next(n + 1);  
+                int k = _rng.Next(n + 1);  
                 string value = list[k];  
                 list[k] = list[n];  
                 list[n] = value;  
