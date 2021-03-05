@@ -28,7 +28,7 @@ namespace TestLibrary
         
         protected string _name;
         protected string _studentName;
-        protected List<TestQuestion> _questions;
+        protected List<Question> _questions;
         
         #endregion
 
@@ -36,7 +36,7 @@ namespace TestLibrary
 
         public Test()
         {
-            _questions = new List<TestQuestion>();
+            _questions = new List<Question>();
         }
 
         public void EnterName()
@@ -69,8 +69,10 @@ namespace TestLibrary
         
         public virtual void AskQuestion()
         {
-            foreach (var item in _questions)
+            foreach (var question in _questions)
             {
+                var item = (TestQuestion) question;
+                
                 int id;
                 
                 Console.WriteLine(item.Text);
