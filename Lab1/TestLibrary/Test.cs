@@ -28,7 +28,7 @@ namespace TestLibrary
         
         protected string _name;
         protected string _studentName;
-        protected List<Question> _questions;
+        protected readonly List<Question> _questions;
         
         #endregion
 

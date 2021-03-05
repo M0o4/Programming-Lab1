@@ -11,16 +11,20 @@ namespace Lab1
 			
 			Test test = new Test();
 			FinalExam exam = new FinalExam();
-
+		
 			Exam m_exam = new Exam();
 			
 			test.AddQuestion();
 			Ask(test);
 		}
-
+		
 		static void Ask(Test test)
 		{
 			test.AskQuestion();
 		}
 	}
+	
+	
 }
+
+
