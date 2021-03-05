@@ -12,18 +12,10 @@ namespace Lab1
 			Test test = new Test();
 			FinalExam exam = new FinalExam();
 
-			test.Name = "Test name";
-			//
-			//exam.Name = "Test exam name";
-			//
-			// saveClass.Save(exam, "exam2");
-
-			//saveClass.Load(exam, "exam2");
+			Exam m_exam = new Exam();
 			
-			test.Save("suka1");
-			
-			Ask(test);
-			Ask(exam);
+			m_exam.AddQuestion();
+			Ask(m_exam);
 		}
 
 		static void Ask(Test test)

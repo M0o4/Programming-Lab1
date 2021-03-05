@@ -1,4 +1,6 @@
-﻿namespace TestLibrary
+﻿using System;
+
+namespace TestLibrary
 {
     public class Question
     {
@@ -22,7 +24,16 @@
         
         private string _text;
         private string _answer;
-        
+
         #endregion
+
+
+        public Question(string text, string answer)
+        {
+            Text = text;
+            Answer = answer;
+        }
+
+        protected Question() {}
     }
 }
