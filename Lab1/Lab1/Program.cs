@@ -15,6 +15,9 @@ namespace Lab1
 			Exam m_exam = new Exam();
 			
 			m_exam.AddQuestion();
+			
+			Console.Clear();
+			
 			Ask(m_exam);
 		}
 		
