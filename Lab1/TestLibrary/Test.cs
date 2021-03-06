@@ -71,27 +71,7 @@ namespace TestLibrary
         {
             foreach (var question in _questions)
             {
-                var item = (TestQuestion) question;
-                
-                int id;
-                
-                Console.WriteLine(item.Text);
-                
-                item.ShowAnswers();
-                
-                do
-                {
-                    Console.Write("Введите ответ: ");
-
-                    var answer = Console.ReadLine();
-                    
-                    if (!int.TryParse(answer, out id))
-                        Console.WriteLine("Ошибка ввода, попробуйте снова.");
-                    
-                } while (id < 1);
-                
-
-                Console.WriteLine(string.Equals(item.Answer.ToLower(), item.GetAnswerInList(id-1).ToLower(), StringComparison.CurrentCultureIgnoreCase) ? "Правильно!" : "Неравиольно!!");
+                question.AskQuestion();
             }
         }
         
