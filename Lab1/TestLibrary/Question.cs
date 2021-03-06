@@ -38,7 +38,15 @@ namespace TestLibrary
 
         public virtual void AskQuestion()
         {
+            Console.WriteLine(Text);
             
+            Console.Write("Введите ответ: ");
+            var answer = Console.ReadLine();
+            
+            if(answer != null && Answer.ToLower() == answer.ToLower())
+                Console.WriteLine("Правильно!");
+            else
+                Console.WriteLine("Не правильно!"); 
         }
         
         protected Question() {}

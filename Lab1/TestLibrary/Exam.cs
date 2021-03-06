@@ -105,30 +105,31 @@ namespace TestLibrary
 
         public override void AskQuestion()
         {
-            //проверить какой тест
-            foreach (var question in _questions)
-            {
-                if(question.GetType() == typeof(TestQuestion))
-                {
-                    base.AskQuestion();
-                    continue;
-                }
-
-                Console.WriteLine(question.Text);
-
-                Console.Write("Введите ответ: ");
-
-                var answer = Console.ReadLine();
-
-                if(answer != null && question.Answer.ToLower() == answer.ToLower())
-                    Console.WriteLine("Правильно");
-                else
-                    Console.WriteLine("Не правильно!");
-                 
-
-                //спросить письменный тест
-            }
+            // //проверить какой тест
+            // foreach (var question in _questions)
+            // {
+            //     if(question.GetType() == typeof(TestQuestion))
+            //     {
+            //         base.AskQuestion();
+            //         continue;
+            //     }
+            //
+            //     Console.WriteLine(question.Text);
+            //
+            //     Console.Write("Введите ответ: ");
+            //
+            //     var answer = Console.ReadLine();
+            //
+            //     if(answer != null && question.Answer.ToLower() == answer.ToLower())
+            //         Console.WriteLine("Правильно");
+            //     else
+            //         Console.WriteLine("Не правильно!");
+            //      
+            //
+            //     //спросить письменный тест
+            // }
             
+            base.AskQuestion();
         }
     }
 }
