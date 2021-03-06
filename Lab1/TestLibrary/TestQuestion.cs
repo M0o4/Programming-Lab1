@@ -83,7 +83,7 @@ namespace TestLibrary
         {
             int id;
 
-            Console.WriteLine(Text);
+            Console.WriteLine($"Вопрос: {Text}");
 
             ShowAnswers();
 

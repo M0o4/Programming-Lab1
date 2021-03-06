@@ -38,7 +38,7 @@ namespace TestLibrary
 
         public virtual void AskQuestion()
         {
-            Console.WriteLine(Text);
+            Console.WriteLine($"Вопрос: {Text}");
             
             Console.Write("Введите ответ: ");
             var answer = Console.ReadLine();
