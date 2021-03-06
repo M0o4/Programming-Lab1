@@ -14,8 +14,8 @@ namespace Lab1
 		
 			Exam m_exam = new Exam();
 			
-			test.AddQuestion();
-			Ask(test);
+			m_exam.AddQuestion();
+			Ask(m_exam);
 		}
 		
 		static void Ask(Test test)

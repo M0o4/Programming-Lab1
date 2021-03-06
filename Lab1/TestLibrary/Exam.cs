@@ -29,44 +29,56 @@ namespace TestLibrary
 
         public override void AddQuestion()
         {
-            int choice = -1;
             string exit;
             
             AddSubjectName();
 
-            Console.WriteLine("Какие задания вы хотите добавить?");
-
             do
             {
-                Console.WriteLine("1)Тестовые\n2)Письменные");
-                Console.Write("Ввод: ");
-                var input = Console.ReadLine();
                 
-                if(!int.TryParse(input, out choice))
-                    Console.WriteLine("Ошибка: \"Не верный ввод\"");
-
-            } while (choice <= 0  || choice > 2);
-            
-            do
-            {
-                switch (choice)
+                int choice = -1;
+                
+                Console.WriteLine("Какие задания вы хотите добавить?");
+                
+                do
                 {
-                    case 1:
-                        base.AddQuestion();
-                        break;
-                    case 2:
-                        AddWriteQuestion();
-                        break;
-                }
+                    Console.WriteLine("1)Тестовые\n2)Письменные");
+                    Console.Write("Ввод: ");
+                    var input = Console.ReadLine();
                 
-                Console.WriteLine("Добавить еще вопрос? \nY)да N)нет");
+                    if(!int.TryParse(input, out choice))
+                        Console.WriteLine("Ошибка: \"Не верный ввод\"");
+
+                } while (choice <= 0  || choice > 2);
+            
+                do
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            base.AddQuestion();
+                            break;
+                        case 2:
+                            AddWriteQuestion();
+                            break;
+                    }
+                
+                    Console.WriteLine("Добавить еще вопрос? \nY)да N)нет");
+                
+                    Console.Write("Ввод: ");
+
+                    exit = Console.ReadLine();
+                
+                } while (exit != null && exit.ToLower() == "y");
+
+                Console.WriteLine("Добавить еще задания? \nY)да N)нет");
                 
                 Console.Write("Ввод: ");
 
                 exit = Console.ReadLine();
-                
+
             } while (exit != null && exit.ToLower() == "y");
-           
+            
             //switch
             //1)Тестовые =>
             //Добавить еще тест?
@@ -101,6 +113,18 @@ namespace TestLibrary
                     base.AskQuestion();
                     continue;
                 }
+
+                Console.WriteLine(question.Text);
+
+                Console.Write("Введите ответ: ");
+
+                var answer = Console.ReadLine();
+
+                if(answer != null && question.Answer.ToLower() == answer.ToLower())
+                    Console.WriteLine("Правильно");
+                else
+                    Console.WriteLine("Не правильно!");
+                 
 
                 //спросить письменный тест
             }

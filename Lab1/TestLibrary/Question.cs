@@ -28,12 +28,21 @@ namespace TestLibrary
         #endregion
 
 
+        #region Methods
+
         public Question(string text, string answer)
         {
             Text = text;
             Answer = answer;
         }
 
+        public virtual void AskQuestion()
+        {
+            
+        }
+        
         protected Question() {}
+
+        #endregion
     }
 }

@@ -57,7 +57,7 @@ namespace TestLibrary
                 
                 _questions.Add(new TestQuestion(text));
                 
-                Console.WriteLine("Добавить еще вопрос? \nY)да N)нет");
+                Console.WriteLine("Добавить еще тестовый вопрос? \nY)да N)нет");
                 
                 Console.Write("Ввод: ");
 
