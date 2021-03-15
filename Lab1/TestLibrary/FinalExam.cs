@@ -4,9 +4,6 @@ namespace TestLibrary
 {
     public class FinalExam : Exam
     {
-        public override void AskQuestion()
-        {
-           Console.WriteLine("UwU");
-        }
+        public override void AskQuestion() => Console.WriteLine("UwU");
     }
 }

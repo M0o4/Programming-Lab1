@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace TestLibrary
 {
@@ -28,16 +26,13 @@ namespace TestLibrary
         
         protected string _name;
         protected string _studentName;
-        protected readonly List<Question> _questions;
+        internal readonly List<Question> _questions;
         
         #endregion
 
         #region Methods
 
-        public Test()
-        {
-            _questions = new List<Question>();
-        }
+        public Test() =>_questions = new List<Question>(10);
 
         public void EnterName()
         {

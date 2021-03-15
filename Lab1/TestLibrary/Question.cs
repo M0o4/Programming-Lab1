@@ -2,7 +2,7 @@
 
 namespace TestLibrary
 {
-    public class Question
+    class Question
     {
         #region Public Variables
         
@@ -21,7 +21,8 @@ namespace TestLibrary
         #endregion
 
         #region Private Variables
-        
+
+        protected int _score;
         private string _text;
         private string _answer;
 
@@ -30,6 +31,8 @@ namespace TestLibrary
 
         #region Methods
 
+        private void AddScore() => _score++;
+        
         public Question(string text, string answer)
         {
             Text = text;
@@ -42,10 +45,12 @@ namespace TestLibrary
             
             Console.Write("Введите ответ: ");
             var answer = Console.ReadLine();
-            
-            if(answer != null && Answer.ToLower() == answer.ToLower())
+
+            if (answer != null && String.Equals(Answer, answer, StringComparison.CurrentCultureIgnoreCase))
+            {
+                AddScore();
                 Console.WriteLine("Правильно!");
-            else
+            }else
                 Console.WriteLine("Не правильно!"); 
         }
         
@@ -53,4 +58,6 @@ namespace TestLibrary
 
         #endregion
     }
+    
+    
 }

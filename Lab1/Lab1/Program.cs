@@ -11,7 +11,7 @@ namespace Lab1
 			
 			Test test = new Test();
 			FinalExam exam = new FinalExam();
-		
+
 			Exam m_exam = new Exam();
 			
 			m_exam.AddQuestion();

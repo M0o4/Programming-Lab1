@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace TestLibrary
 {
-    public class TestQuestion : Question
+     class TestQuestion : Question
     {
         #region Private Variables
 
@@ -94,11 +94,11 @@ namespace TestLibrary
                 var answer = Console.ReadLine();
 
                 if (!int.TryParse(answer, out id))
-                    Console.WriteLine("Ошибка ввода, попробуйте снова.");
+                    Console.WriteLine("Ошибка ввода, попробуйте снова.\a");
             } while (id < 1);
 
 
-            Console.WriteLine(string.Equals(Answer.ToLower(), GetAnswerInList(id - 1).ToLower(), StringComparison.CurrentCultureIgnoreCase) ? "Правильно!" : "Неравиольно!!");
+            Console.WriteLine(string.Equals(Answer, GetAnswerInList(id - 1), StringComparison.CurrentCultureIgnoreCase) ? "Правильно!" : "Неравиольно!!");
         }
 
         #endregion

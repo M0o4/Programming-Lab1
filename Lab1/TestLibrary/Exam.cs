@@ -18,6 +18,17 @@ namespace TestLibrary
 
         protected string _subjectName;
         protected string _schoolName;
+        protected int _score;
+
+        private void AddSchoolName()
+        {
+            Console.WriteLine("Введите название школы.");
+            Console.Write("Ввод: ");
+
+            SchoolName = Console.ReadLine();
+
+            Console.WriteLine();
+        }
 
         private void AddSubjectName()
         {
@@ -25,12 +36,15 @@ namespace TestLibrary
             Console.Write("Ввод: ");
 
             SubjectName = Console.ReadLine();
+
+            Console.WriteLine();
         }
 
         public override void AddQuestion()
         {
             string exit;
 
+            AddSchoolName();
             AddSubjectName();
 
             do
@@ -46,7 +60,7 @@ namespace TestLibrary
                     var input = Console.ReadLine();
 
                     if (!int.TryParse(input, out choice))
-                        Console.WriteLine("Ошибка: \"Не верный ввод\"");
+                        Console.WriteLine("Ошибка: \"Не верный ввод\"\a");
                 } while (choice <= 0 || choice > 2);
 
                 switch (choice)
