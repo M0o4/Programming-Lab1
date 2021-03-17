@@ -1,7 +1,7 @@
 ﻿using System;
-using TestLibrary;
+using MyLibrary;
 
-namespace Lab1
+namespace lab1Framework
 {
 	class Program
 	{
@@ -67,8 +67,4 @@ namespace Lab1
 			Console.ReadKey();
 		}
 	}
-	
-	
 }
-
-

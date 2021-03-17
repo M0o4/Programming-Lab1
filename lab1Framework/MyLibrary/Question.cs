@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace TestLibrary
+namespace MyLibrary
 {
-    class Question
+    internal class Question
     {
-        #region Public Variables
+          #region Public Variables
 
         public string Text
         {
@@ -89,6 +89,4 @@ namespace TestLibrary
 
         #endregion
     }
-    
-    
 }

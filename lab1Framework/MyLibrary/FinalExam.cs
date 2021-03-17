@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestLibrary
+namespace MyLibrary
 {
     public class FinalExam : Exam
     {
-        #region Private Variables
+         #region Private Variables
         
         private List<string> _listOfExaminers;
         private int _timeLimit;

@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace TestLibrary
+namespace MyLibrary
 {
     public class Challenge : Test
     {
-        #region Public Variables
+         #region Public Variables
 
         public string NameOfEducationalInstitution
         {

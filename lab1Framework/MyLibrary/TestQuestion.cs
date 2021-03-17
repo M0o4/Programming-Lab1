@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 
-namespace TestLibrary
+namespace MyLibrary
 {
-     class TestQuestion : Question
+    internal class TestQuestion : Question
     {
-        #region Private Variables
+         #region Private Variables
 
         private readonly List<string> _answers;
 

@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace TestLibrary
+namespace MyLibrary
 {
-    
     public class Exam : Test
     {
         #region Public Variables
-        public string SubjectName
+         public string SubjectName
         {
             get => _subjectName;
             set => _subjectName = string.IsNullOrEmpty(value) ? "No subject name" : value;
