@@ -2,7 +2,7 @@
 
 namespace MyLibrary
 {
-    internal class Question
+    public class Question
     {
           #region Public Variables
 
@@ -38,7 +38,7 @@ namespace MyLibrary
             Answer = answer;
         }
 
-        public virtual void AskQuestion(ref int score)
+        public virtual void AskQuestion(ref int score, bool answeResult)
         {
             var currConsoleColor = Console.ForegroundColor;
             

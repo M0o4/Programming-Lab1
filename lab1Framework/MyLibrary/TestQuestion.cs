@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 namespace MyLibrary
 {
-    internal class TestQuestion : Question
+    public class TestQuestion : Question
     {
-         #region Private Variables
+        public List<string> Answers => _answers;
+
+        #region Private Variables
 
         private readonly List<string> _answers;
 
@@ -15,37 +17,35 @@ namespace MyLibrary
 
         #region Methods
 
-        public TestQuestion(string text)
+        public TestQuestion(string text, string answer, List<string> answers)
         {
             Text = text;
-
-            _answers = new List<string>();
-
-            AddAnswers();
+            _answers = answers;
+            AddAnswers(answer);
         }
 
-        private void AddAnswers()
+        private void AddAnswers(string answer)
         {
-            string exit;
-
-            Console.WriteLine("Введите ответ на вопрос: ");
-            Console.Write("Ввод: ");
-            var answer = Console.ReadLine();
+            // string exit;
+            //
+            // Console.WriteLine("Введите ответ на вопрос: ");
+            // Console.Write("Ввод: ");
+            // var answer = Console.ReadLine();
             Answer = answer;
             _answers.Add(answer);
 
-            do
-            {
-                Console.WriteLine("Введите неправльные ответы: ");
-                Console.Write("Ввод: ");
-
-                answer = Console.ReadLine();
-                _answers.Add(answer);
-
-                Console.WriteLine("Хотите добавить еще ответов?\nY)Да\nN)Нет");
-                Console.Write("Ввод: ");
-                exit = Console.ReadLine();
-            } while (exit != null && exit.ToLower() == "y");
+            // do
+            // {
+            //     Console.WriteLine("Введите неправльные ответы: ");
+            //     Console.Write("Ввод: ");
+            //
+            //     answer = Console.ReadLine();
+            //     _answers.Add(answer);
+            //
+            //     Console.WriteLine("Хотите добавить еще ответов?\nY)Да\nN)Нет");
+            //     Console.Write("Ввод: ");
+            //     exit = Console.ReadLine();
+            // } while (exit != null && exit.ToLower() == "y");
 
             Shuffle(_answers);
         }
@@ -78,7 +78,7 @@ namespace MyLibrary
             return _answers[id];
         }
 
-        public override void AskQuestion(ref int score)
+        public override void AskQuestion(ref int score, bool answeResult)
         {
             var currConsoleColor = Console.ForegroundColor;
             int id;
@@ -103,19 +103,8 @@ namespace MyLibrary
 
             WriteResult(string.Equals(Answer, GetAnswerInList(id - 1), StringComparison.CurrentCultureIgnoreCase), ref score);
             
-            // if (string.Equals(Answer, GetAnswerInList(id - 1), StringComparison.CurrentCultureIgnoreCase))
-            // {
-            //     AddScore(ref score);
-            //     Console.ForegroundColor = ConsoleColor.Green;
-            //     Console.WriteLine("Правильно!");
-            //     Console.ForegroundColor = currConsoleColor;
-            // }
-            // else
-            // {
-            //     Console.ForegroundColor = ConsoleColor.Red;
-            //     Console.WriteLine("Не правильно!");
-            //     Console.ForegroundColor = currConsoleColor;
-            // }
+            if(answeResult)
+                AddScore(ref score);
         }
 
         #endregion

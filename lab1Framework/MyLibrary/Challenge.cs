@@ -73,22 +73,22 @@ namespace MyLibrary
             } while (_passingScore <= 0);
         }
 
-        public override void AddQuestion()
-        {
-            EnterNameOfEducationalInstitution();
-            EnterPassingScore();
-            EnterStudentIdCard();
-            base.AddQuestion();
-        }
-
-        public override void AskQuestion()
-        {
-            base.AskQuestion();
-            if(_score < _passingScore)
-                Console.WriteLine("Экзамен не сдан");
-            else
-                Console.WriteLine("Экзамен сдан");
-        }
+        // public override void AddQuestion()
+        // {
+        //     EnterNameOfEducationalInstitution();
+        //     EnterPassingScore();
+        //     EnterStudentIdCard();
+        //     base.AddQuestion();
+        // }
+        //
+        // public override void AskQuestion()
+        // {
+        //     base.AskQuestion();
+        //     if(_score < _passingScore)
+        //         Console.WriteLine("Экзамен не сдан");
+        //     else
+        //         Console.WriteLine("Экзамен сдан");
+        // }
 
         #endregion
     }

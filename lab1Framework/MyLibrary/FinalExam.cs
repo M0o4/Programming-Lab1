@@ -67,52 +67,52 @@ namespace MyLibrary
         }
         
         
-        public override void AddQuestion()
-        {
-            EnterExaminers();
-            EnterTimeLimit();
-            
-            base.AddQuestion();
-        }
-
-        public override void AskQuestion()
-        {
-            var currConsoleColor = Console.ForegroundColor;
-
-            EnterName();
-
-            Console.WriteLine();
-            
-            Console.WriteLine($"Экзамен по {SubjectName}");
-            Console.WriteLine();
-            Console.WriteLine("Экзаменаторы:");
-            DisplayExaminators();
-
-            Console.WriteLine();
-            
-            _start = DateTime.Now;
-            _end = DateTime.Now.AddMinutes(_timeLimit);
-            Console.WriteLine($"Тест начался в {_start}\nЗакончиться в {_end}");
-
-            Console.WriteLine();
-            
-            foreach (var question in _questions)
-            {
-                question.AskQuestion(ref _score);
-                
-                if (_end.Subtract(DateTime.Now).TotalMinutes <= 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    Console.WriteLine("Время вышло, тест окончен!");
-                    Console.ForegroundColor = currConsoleColor;
-                    break;
-                }
-            }
-
-            Console.WriteLine();
-            
-            Console.WriteLine($"Тест окончен, баллы за тест: {_score}");
-        }
+        // public override void AddQuestion()
+        // {
+        //     EnterExaminers();
+        //     EnterTimeLimit();
+        //     
+        //     base.AddQuestion();
+        // }
+        //
+        // public override void AskQuestion()
+        // {
+        //     var currConsoleColor = Console.ForegroundColor;
+        //
+        //     EnterName();
+        //
+        //     Console.WriteLine();
+        //     
+        //     Console.WriteLine($"Экзамен по {SubjectName}");
+        //     Console.WriteLine();
+        //     Console.WriteLine("Экзаменаторы:");
+        //     DisplayExaminators();
+        //
+        //     Console.WriteLine();
+        //     
+        //     _start = DateTime.Now;
+        //     _end = DateTime.Now.AddMinutes(_timeLimit);
+        //     Console.WriteLine($"Тест начался в {_start}\nЗакончиться в {_end}");
+        //
+        //     Console.WriteLine();
+        //     
+        //     foreach (var question in _questions)
+        //     {
+        //         question.AskQuestion(ref _score);
+        //         
+        //         if (_end.Subtract(DateTime.Now).TotalMinutes <= 0)
+        //         {
+        //             Console.ForegroundColor = ConsoleColor.DarkCyan;
+        //             Console.WriteLine("Время вышло, тест окончен!");
+        //             Console.ForegroundColor = currConsoleColor;
+        //             break;
+        //         }
+        //     }
+        //
+        //     Console.WriteLine();
+        //     
+        //     Console.WriteLine($"Тест окончен, баллы за тест: {_score}");
+        // }
         #endregion
     }
 }
