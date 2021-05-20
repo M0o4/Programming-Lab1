@@ -9,13 +9,13 @@ namespace MyLibrary
         public string Text
         {
             get => _text;
-            set => _text = string.IsNullOrEmpty(value) ? "No text" : value;
+            protected set => _text = string.IsNullOrEmpty(value) ? "No text" : value;
         }
 
         public string Answer
         {
             get => _answer;
-            set => _answer = string.IsNullOrEmpty(value) ? "No answer" : value;
+            protected set => _answer = string.IsNullOrEmpty(value) ? "No answer" : value;
         }
         
         #endregion
@@ -40,8 +40,7 @@ namespace MyLibrary
 
         public virtual void AskQuestion(ref int score, bool answeResult)
         {
-            var currConsoleColor = Console.ForegroundColor;
-            
+
             Console.WriteLine($"Вопрос: {Text}");
             
             Console.Write("Введите ответ: ");
@@ -49,21 +48,7 @@ namespace MyLibrary
 
             WriteResult(answer != null && String.Equals(Answer, answer, StringComparison.CurrentCultureIgnoreCase),
                 ref score);
-
-            // if (answer != null && String.Equals(Answer, answer, StringComparison.CurrentCultureIgnoreCase))
-            // {
-            //     AddScore(ref score);
-            //     Console.ForegroundColor = ConsoleColor.Green;
-            //     Console.WriteLine("Правильно!");
-            //     Console.ForegroundColor = currConsoleColor;
-            // }
-            // else
-            // {
-            //     Console.ForegroundColor = ConsoleColor.Red;
-            //     Console.WriteLine("Не правильно!");
-            //     Console.ForegroundColor = currConsoleColor;
-            // }
-
+            
         }
 
         protected void WriteResult(bool answer, ref int score)

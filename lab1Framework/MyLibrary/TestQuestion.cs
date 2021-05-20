@@ -26,27 +26,8 @@ namespace MyLibrary
 
         private void AddAnswers(string answer)
         {
-            // string exit;
-            //
-            // Console.WriteLine("Введите ответ на вопрос: ");
-            // Console.Write("Ввод: ");
-            // var answer = Console.ReadLine();
             Answer = answer;
             _answers.Add(answer);
-
-            // do
-            // {
-            //     Console.WriteLine("Введите неправльные ответы: ");
-            //     Console.Write("Ввод: ");
-            //
-            //     answer = Console.ReadLine();
-            //     _answers.Add(answer);
-            //
-            //     Console.WriteLine("Хотите добавить еще ответов?\nY)Да\nN)Нет");
-            //     Console.Write("Ввод: ");
-            //     exit = Console.ReadLine();
-            // } while (exit != null && exit.ToLower() == "y");
-
             Shuffle(_answers);
         }
 
